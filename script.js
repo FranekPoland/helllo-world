@@ -1,8 +1,10 @@
+//Globals
 var submit = document.querySelector('.submit');
 var submit1 = document.querySelector('.submit1');
 var clear1 = document.querySelector('.clear1');
 var clear = document.querySelector('.clear');
 var save = document.querySelector('.savename');
+var radios = document.querySelectorAll("input[type='radio']");
 var log = document.querySelector("#girl-answer");
 var result = document.querySelector('.result');
 var storage = {
@@ -11,7 +13,6 @@ var storage = {
     holidays: []
 };
 
-
 // User
 
 save.addEventListener("click", function () {
@@ -19,15 +20,14 @@ save.addEventListener("click", function () {
     var name = nameInput.value;
     nameInput.value = '';
     storage.user = name;
-}, false)
-
+}, false);
 
 // Holidays
 
 submit1.addEventListener("click", function () {
+    var checkboxes = document.querySelectorAll("input[type='checkbox']");
     storage.holidays = [];
 
-    var checkboxes = document.querySelectorAll("input[type='checkbox']");
     checkboxes.forEach(function (checkbox) {
         if (checkbox.checked) {
             checkbox.checked = false;
@@ -37,12 +37,11 @@ submit1.addEventListener("click", function () {
 }, false);
 
 clear1.addEventListener("click", function () {
-
     var checkboxes = document.querySelectorAll("input[type='checkbox']");
 
     checkboxes.forEach(function (checkbox) {
         if (checkbox.checked) {
-            checkbox.checked = false
+            checkbox.checked = false;
         }
     });
 
@@ -53,39 +52,28 @@ clear1.addEventListener("click", function () {
 // Girl
 
 submit.addEventListener("click", function () {
-
-    var radios = document.querySelectorAll("input[type='radio']");
     var answer = 'You chose: ';
 
     radios.forEach(function (radio) {
         if (radio.checked) {
             answer = answer + radio.value + '. Please take your medicine.';
-            radio.checked = false
+            radio.checked = false;
             storage.woman = radio.value;
-            console.log(radio.checked, storage, radio.value);
         }
     });
-
     log.innerText = answer;
-
 }, false);
 
 clear.addEventListener("click", function () {
 
-    var radios = document.querySelectorAll("input[type='radio']");
-
-
     radios.forEach(function (radio) {
         if (radio.checked) {
-            radio.checked = false
+            radio.checked = false;
         }
     });
-
-
 }, false);
 
 // Storage
 result.addEventListener('click', function () {
-    console.log(storage);
-
+    console.log(result);
 }, false);
