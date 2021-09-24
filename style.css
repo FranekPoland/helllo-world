@@ -2,6 +2,12 @@ html,
 body {
     padding: 0;
     margin: 0;
+    font-family: 'Gemunu Libre', sans-serif;
+    background-image: url('back.jpg');
+}
+
+.header1 {
+    margin-left: 40%;
 }
 
 .button1 {
@@ -20,7 +26,6 @@ body {
     padding: 50px;
     background: lightgray;
     opacity: 0.8;
-    height: 100vh;
     position: relative;
 }
 

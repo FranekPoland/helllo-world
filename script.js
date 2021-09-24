@@ -33,7 +33,7 @@
 //---------------------------RADIO----------------------------------
 
 var submit = document.querySelector('.submit');
-// TODO add btn Clear
+var clear = document.querySelector('.clear');
 
 var log = document.querySelector("#girl-answer");
 
@@ -45,9 +45,24 @@ submit.addEventListener("click", function () {
     radios.forEach(function (radio) {
         if (radio.checked) {
             answer = answer + radio.value + '. Please take your medicine.';
+            radio.checked = false
         }
     });
 
     log.innerText = answer;
+
+}, false);
+
+clear.addEventListener("click", function () {
+
+    var radios = document.querySelectorAll("input[type='radio']");
+    
+
+    radios.forEach(function (radio) {
+        if (radio.checked) {
+            radio.checked = false
+        }
+    });
+
 
 }, false);
