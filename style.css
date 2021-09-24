@@ -36,7 +36,8 @@ body {
     border: 0.5px solid lightgray;
 }
 
-.radio-box {
+.radio-box,
+.checkbox {
     border: 1px solid gray;
     width: 500px;
     padding: 40px;

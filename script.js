@@ -1,41 +1,56 @@
-// function getName() {
-//     var name = document.querySelector('.name');
-//     console.log('name', document);
-//     return name;
-// }
+var submit = document.querySelector('.submit');
+var submit1 = document.querySelector('.submit1');
+var clear1 = document.querySelector('.clear1');
+var clear = document.querySelector('.clear');
+var save = document.querySelector('.savename');
+var log = document.querySelector("#girl-answer");
+var result = document.querySelector('.result');
+var storage = {
+    user: '',
+    woman: '',
+    holidays: []
+};
 
-// function send() {
-//     test();
-// }
 
-// function display() {
-//     var button = document.querySelector('.button');
-//     button.innerHTML = 'lulu';
+// User
 
-//     if (button.style.background == 'red none repeat scroll 0% 0%') {
-//         button.style.background = 'yellow'
-//     }
-//     else {
-//         button.style.background = 'red'
+save.addEventListener("click", function () {
+    var nameInput = document.querySelector('.name');
+    var name = nameInput.value;
+    nameInput.value = '';
+    storage.user = name;
+}, false)
 
-//     }
-// }
 
-// function test() {
-//     var button = document.getElementsByClassName('.button');
-//     console.log('tester', button.style)
-//     if (button.style.background == 'red none repeat scroll 0% 0%') {
-//         return console.log('test passed')
-//     }
-//     console.log('test failed')
-// }
+// Holidays
+
+submit1.addEventListener("click", function () {
+    storage.holidays = [];
+
+    var checkboxes = document.querySelectorAll("input[type='checkbox']");
+    checkboxes.forEach(function (checkbox) {
+        if (checkbox.checked) {
+            checkbox.checked = false;
+            storage.holidays.push(checkbox.value);
+        }
+    });
+}, false);
+
+clear1.addEventListener("click", function () {
+
+    var checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+    checkboxes.forEach(function (checkbox) {
+        if (checkbox.checked) {
+            checkbox.checked = false
+        }
+    });
+
+
+}, false);
 
 //---------------------------RADIO----------------------------------
-
-var submit = document.querySelector('.submit');
-var clear = document.querySelector('.clear');
-
-var log = document.querySelector("#girl-answer");
+// Girl
 
 submit.addEventListener("click", function () {
 
@@ -46,6 +61,8 @@ submit.addEventListener("click", function () {
         if (radio.checked) {
             answer = answer + radio.value + '. Please take your medicine.';
             radio.checked = false
+            storage.woman = radio.value;
+            console.log(radio.checked, storage, radio.value);
         }
     });
 
@@ -56,7 +73,7 @@ submit.addEventListener("click", function () {
 clear.addEventListener("click", function () {
 
     var radios = document.querySelectorAll("input[type='radio']");
-    
+
 
     radios.forEach(function (radio) {
         if (radio.checked) {
@@ -64,5 +81,11 @@ clear.addEventListener("click", function () {
         }
     });
 
+
+}, false);
+
+// Storage
+result.addEventListener('click', function () {
+    console.log(storage);
 
 }, false);

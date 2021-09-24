@@ -14,13 +14,34 @@
         <h1 class="header1">This is for test only!</h1>
         <!-- <nav>
             Menu główne (in progress)
-        </nav>
+        </nav> -->
 
         <div class="container">
-            <input class="name">
-            <button onclick="display()" class="button1">GO</button>
-            <button onclick="test()" class="koko">TEST</button>
-        </div> -->
+            <input type="text" class="name">
+            <button class="savename">Save Name</button>
+        </div>
+
+        <div class="checkbox">
+            <p class="comment">Here you can choose where do you like spending your time the most.</p>
+            <span class="desription">Please select a type of spending time you like the most</span>
+            <div>
+                <input type="checkbox" id="forest" name="forest" value="forest">
+                <label for="forest">Forrest</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="mountains" name="mountains" value="mountains">
+                <label for="mountains">Mountains</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="lakes" name="lakes" value="lakes">
+                <label for="lakes">Lakes</label>
+            </div>
+            <button class="button submit1">Submit</button>
+            <button class="button clear1">Clear</button>
+        </div>
+
 
         <div class="radio-box">
             <p class="comment">Here you can test radio. This is special type of input that let you select just one
@@ -45,6 +66,9 @@
             <div id="girl-answer"></div>
         </div>
 
+        <div>
+            <button class="button result">Result</button>
+        </div>
         <footer>
             Copyright: Franek 2021 Lublin
         </footer>
