@@ -1,4 +1,16 @@
-.button {
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gemunu Libre', sans-serif;
+    background-image: url('back.jpg');
+}
+
+.header1 {
+    margin-left: 40%;
+}
+
+.button1 {
     position: absolute;
     width: 100px;
     border: 3px solid rgb(51, 26, 196);
@@ -9,10 +21,35 @@
 }
 
 #main {
-    margin: 0%;
-    padding: 0%;
-    color: red;
-    background-color: seagreen;
-    height: 100vh;
+    margin-left: 120px;
+    margin-right: 120px;
+    padding: 50px;
+    background: lightgray;
+    opacity: 0.8;
     position: relative;
+}
+
+.button {
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+    border: 0.5px solid lightgray;
+}
+
+.radio-box,
+.checkbox {
+    border: 1px solid gray;
+    width: 500px;
+    padding: 40px;
+    font-size: 20px;
+}
+
+.radio-option {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#girl-answer {
+    font-size: 33px;
+    color: red;
 }

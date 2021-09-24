@@ -1,41 +1,79 @@
-    <!doctype html>
-    <html>
+<!doctype html>
 
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <title>Tytuł strony...</title>
+<head>
+    <title>Project 1</title>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
 
-        <!-- meta tagi !-->
-        <meta charset="UTF-8" />
-        <meta name="description" content="Przykładowa strona internetowa oparta o HTML 5 i CSS 3" />
-        <meta name="keywords" content="blog, programowanie, HTML 5, tutorial, Strefa kodera, StrefaKodera.pl" />
-        <meta name="author" content="Łukasz Dudziński" />
-        <!-- link tagi !-->
-        <link rel="stylesheet" href="style.css" />
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://strefakodera.pl/feed" />
-        <!-- skrypty !-->
-    </head>
+<body>
+    <div id="main">
+        <h1 class="header1">This is for test only!</h1>
+        <!-- <nav>
+            Menu główne (in progress)
+        </nav> -->
 
-    <body>
-        <div id="main">
-            <header>
-                TEST
-            </header>
-            <nav>
-                Menu główne
-            </nav>
-            <section>
-                <div class="container">
-                    <input class="name">
-                    <button onclick="display()" class="button">GO</button>
-                    <button onclick="test()" class="koko">TEST</button>
-                </div>
-            </section>
-            <footer>
-                Stopka
-            </footer>
+        <div class="container">
+            <input type="text" class="name">
+            <button class="savename">Save Name</button>
         </div>
-        <script src="script.js"></script>
-    </body>
 
-    </html>
+        <div class="checkbox">
+            <p class="comment">Here you can choose where do you like spending your time the most.</p>
+            <span class="desription">Please select a type of spending time you like the most</span>
+            <div>
+                <input type="checkbox" id="forest" name="forest" value="forest">
+                <label for="forest">Forrest</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="mountains" name="mountains" value="mountains">
+                <label for="mountains">Mountains</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="lakes" name="lakes" value="lakes">
+                <label for="lakes">Lakes</label>
+            </div>
+            <button class="button submit1">Submit</button>
+            <button class="button clear1">Clear</button>
+        </div>
+
+
+        <div class="radio-box">
+            <p class="comment">Here you can test radio. This is special type of input that let you select just one
+                option.</p>
+            <span class="desription">Please select a type of girl you like the most</span>
+            <div class="radio-option">
+                <input type="radio" id="crazy" name="girl" value="crazy">
+                <label for="crazy">Crazy</label>
+            </div>
+
+            <div class="radio-option">
+                <input type="radio" id="humble" name="girl" value="humble">
+                <label for="humble">Humble</label>
+            </div>
+
+            <div class="radio-option">
+                <input type="radio" id="romantic" name="girl" value="romantic">
+                <label for="romantic">Romantic</label>
+            </div>
+            <button class="button submit">Submit</button>
+            <button class="button clear">Clear</button>
+            <div id="girl-answer"></div>
+        </div>
+
+        <div>
+            <button class="button result">Result</button>
+        </div>
+        <footer>
+            Copyright: Franek 2021 Lublin
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
