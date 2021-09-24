@@ -13,18 +13,15 @@ var storage = {
     holidays: []
 };
 
-// User
-
-save.addEventListener("click", function () {
+var getName = function () {
     var nameInput = document.querySelector('.name');
     var name = nameInput.value;
-    nameInput.value = '';
     storage.user = name;
-}, false);
+    nameInput.value = '';
+    console.log('test')
+}
 
-// Holidays
-
-submit1.addEventListener("click", function () {
+var getHolidays = function () {
     var checkboxes = document.querySelectorAll("input[type='checkbox']");
     storage.holidays = [];
 
@@ -34,9 +31,9 @@ submit1.addEventListener("click", function () {
             storage.holidays.push(checkbox.value);
         }
     });
-}, false);
+}
 
-clear1.addEventListener("click", function () {
+var clearHolidays = function () {
     var checkboxes = document.querySelectorAll("input[type='checkbox']");
 
     checkboxes.forEach(function (checkbox) {
@@ -44,14 +41,9 @@ clear1.addEventListener("click", function () {
             checkbox.checked = false;
         }
     });
+}
 
-
-}, false);
-
-//---------------------------RADIO----------------------------------
-// Girl
-
-submit.addEventListener("click", function () {
+var getGirl = function () {
     var answer = 'You chose: ';
 
     radios.forEach(function (radio) {
@@ -62,18 +54,33 @@ submit.addEventListener("click", function () {
         }
     });
     log.innerText = answer;
-}, false);
+}
 
-clear.addEventListener("click", function () {
+var clearRadio = function () {
 
     radios.forEach(function (radio) {
         if (radio.checked) {
             radio.checked = false;
         }
     });
-}, false);
+}
+// User
+
+save.addEventListener("click", getName, false);
+
+// Holidays
+
+submit1.addEventListener("click", getHolidays, false);
+
+clear1.addEventListener("click", clearHolidays , false);
+
+// Girl
+
+submit.addEventListener("click",getGirl, false);
+
+clear.addEventListener("click", clearRadio, false);
 
 // Storage
 result.addEventListener('click', function () {
-    console.log(result);
+    console.log(storage);
 }, false);
