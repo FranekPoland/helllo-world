@@ -4,6 +4,7 @@ var submit1 = document.querySelector('.submit1');
 var clear1 = document.querySelector('.clear1');
 var clear = document.querySelector('.clear');
 var save = document.querySelector('.savename');
+
 var radios = document.querySelectorAll("input[type='radio']");
 var log = document.querySelector("#girl-answer");
 var result = document.querySelector('.result');
@@ -31,19 +32,23 @@ var getHolidays = function () {
             storage.holidays.push(checkbox.value);
         }
     });
+
 }
 
 var clearHolidays = function () {
+
     var checkboxes = document.querySelectorAll("input[type='checkbox']");
 
     checkboxes.forEach(function (checkbox) {
         if (checkbox.checked) {
+
             checkbox.checked = false;
         }
     });
 }
 
 var getGirl = function () {
+
     var answer = 'You chose: ';
 
     radios.forEach(function (radio) {
@@ -64,6 +69,7 @@ var clearRadio = function () {
         }
     });
 }
+
 // User
 
 save.addEventListener("click", getName, false);
@@ -83,4 +89,5 @@ clear.addEventListener("click", clearRadio, false);
 // Storage
 result.addEventListener('click', function () {
     console.log(storage);
+
 }, false);
