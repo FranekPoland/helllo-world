@@ -7,7 +7,14 @@ body {
 }
 
 .header1 {
-    margin-left: 40%;
+    height: 150px;
+    background-color: black;
+}
+
+.logo {
+    margin-left: 33%;
+    width: 300px;
+    position: relative;
 }
 
 #main {
