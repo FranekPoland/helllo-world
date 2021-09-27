@@ -10,16 +10,6 @@ body {
     margin-left: 40%;
 }
 
-.button1 {
-    position: absolute;
-    width: 100px;
-    border: 3px solid rgb(51, 26, 196);
-    padding: 10px;
-    margin-left: 50%;
-    margin-top: 100px;
-    background: red;
-}
-
 #main {
     margin-left: 120px;
     margin-right: 120px;
@@ -36,10 +26,11 @@ body {
     border: 0.5px solid lightgray;
 }
 
+.carsbox,
 .radio-box,
 .checkbox {
     border: 1px solid gray;
-    width: 500px;
+    width: 68vw;
     padding: 40px;
     font-size: 20px;
 }
@@ -52,4 +43,18 @@ body {
 #girl-answer {
     font-size: 33px;
     color: red;
+}
+
+.car {
+    width: 200px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.highlitedcar {
+    border: 3px solid yellow;
+}
+
+.chosencar {
+    border: 3px solid black;
 }

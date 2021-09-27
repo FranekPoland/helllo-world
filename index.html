@@ -1,0 +1,87 @@
+<!doctype html>
+
+<head>
+    <title>Project 1</title>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+    <div id="main">
+
+        <h1 class="header1">This is for test only!</h1>
+        <!-- <nav>
+            Menu główne (in progress)
+        </nav> -->
+
+        <div class="container">
+            <input type="text" class="name">
+            <button class="savename">Save Name</button>
+        </div>
+
+        <div class="checkbox">
+            <p class="comment">Here you can choose where do you like spending your time the most.</p>
+            <span class="desription">Please select a type of spending time you like the most</span>
+            <div>
+                <input type="checkbox" id="forest" name="forest" value="forest">
+                <label for="forest">Forrest</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="mountains" name="mountains" value="mountains">
+                <label for="mountains">Mountains</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="lakes" name="lakes" value="lakes">
+                <label for="lakes">Lakes</label>
+            </div>
+            <button class="button submit1">Submit</button>
+            <button class="button clear1">Clear</button>
+        </div>
+
+        <div class="radio-box">
+            <p class="comment">Here you can test radio. This is special type of input that let you select just one
+                option.</p>
+            <span class="desription">Please select a type of girl you like the most</span>
+            <div class="radio-option">
+                <input type="radio" id="crazy" name="girl" value="crazy">
+                <label for="crazy">Crazy</label>
+            </div>
+
+            <div class="radio-option">
+                <input type="radio" id="humble" name="girl" value="humble">
+                <label for="humble">Humble</label>
+            </div>
+
+            <div class="radio-option">
+                <input type="radio" id="romantic" name="girl" value="romantic">
+                <label for="romantic">Romantic</label>
+            </div>
+            <button class="button submit">Submit</button>
+            <button class="button clear">Clear</button>
+            <div id="girl-answer"></div>
+        </div>
+
+        <div class="carsbox">
+            <img class="car" id="car1" src="assets/car1.jpg" alt="bugatti">
+            <img class="car" id="car2" src="assets/car2.jpg" alt="rollsroyce">
+            <img class="car" id="car3" src="assets/car3.jpg" alt="audir8">
+            <button class="button clear2">Clear</button>
+        </div>
+        <div>
+            <button class="button result">Result</button>
+        </div>
+        <footer>
+            Copyright: Franek 2021 Lublin
+        </footer>
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
