@@ -1,10 +1,7 @@
 //Globals
-var submit = document.querySelector('.submit');
-var submit1 = document.querySelector('.submit1');
 var clear = document.querySelector('.clear');
 var clear1 = document.querySelector('.clear1');
 var clear2 = document.querySelector('.clear2');
-var save = document.querySelector('.savename');
 var radios = document.querySelectorAll('input[type="radio"]');
 var log = document.querySelector('#girl-answer');
 var result = document.querySelector('.result');
@@ -15,7 +12,8 @@ var car3 = document.getElementById('car3');
 var storage = {
     user: '',
     woman: '',
-    holidays: []
+    holidays: [],
+    car: ''
 };
 
 var getName = function () {
@@ -23,7 +21,6 @@ var getName = function () {
     var name = nameInput.value;
     storage.user = name;
     nameInput.value = '';
-    console.log('test')
 }
 
 var getHolidays = function () {
@@ -71,17 +68,14 @@ var clearRadio = function () {
 }
 // User
 
-save.addEventListener('click', getName, false);
 
 // Holidays
 
-submit1.addEventListener('click', getHolidays, false);
 
 clear1.addEventListener('click', clearHolidays, false);
 
 // Girl
 
-submit.addEventListener('click', getGirl, false);
 
 clear.addEventListener('click', clearRadio, false);
 
@@ -118,6 +112,7 @@ car1.addEventListener('click', function (event) {
         event.currentTarget.classList.add('chosencar');
     }
     isChosenCar = true;
+    storage.car = event.currentTarget.name;
 }, false);
 
 car2.addEventListener('click', function (event) {
@@ -125,6 +120,7 @@ car2.addEventListener('click', function (event) {
         event.currentTarget.classList.add('chosencar');
     }
     isChosenCar = true;
+    storage.car = event.currentTarget.name;
 }, false);
 
 car3.addEventListener('click', function (event) {
@@ -132,6 +128,7 @@ car3.addEventListener('click', function (event) {
         event.currentTarget.classList.add('chosencar');
     }
     isChosenCar = true;
+    storage.car = event.currentTarget.name;
 }, false);
 
 clear2.addEventListener('click', function () {
@@ -141,6 +138,29 @@ clear2.addEventListener('click', function () {
 }, false);
 
 // Storage
-result.addEventListener('click', function () {
-    console.log(storage);
-}, false);
+var show = function () {
+    var table = document.querySelector('.hidden');
+    table.classList.remove('hidden');
+    var i = 1;
+    for (var key in storage) {
+        var tableName = 'row';
+        tableName = tableName + i;
+        var row = document.getElementById(tableName);
+        var children = row.children;
+        children[0].innerHTML = i;
+        children[1].innerHTML = key;
+        children[2].innerHTML = storage[key];
+        i++;
+    }
+}
+
+var handleResult = function() {
+    getHolidays();
+    getGirl();
+    getName();
+
+    show();
+}
+
+result.addEventListener('click', handleResult, false);
+
