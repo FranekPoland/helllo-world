@@ -17,11 +17,11 @@
             Menu główne (in progress)
         </nav> -->
         <div>
-           
+
         </div>
         <div class="container">
+            <span>Write your name</span>
             <input type="text" class="name">
-            <button class="savename">Save Name</button>
         </div>
 
         <div class="checkbox">
@@ -41,7 +41,6 @@
                 <input type="checkbox" id="lakes" name="lakes" value="lakes">
                 <label for="lakes">Lakes</label>
             </div>
-            <button class="button submit1">Submit</button>
             <button class="button clear1">Clear</button>
         </div>
 
@@ -63,17 +62,45 @@
                 <input type="radio" id="romantic" name="girl" value="romantic">
                 <label for="romantic">Romantic</label>
             </div>
-            <button class="button submit">Submit</button>
             <button class="button clear">Clear</button>
             <div id="girl-answer"></div>
         </div>
 
         <div class="carsbox">
-            <img class="car" id="car1" src="assets/car1.jpg" alt="bugatti">
-            <img class="car" id="car2" src="assets/car2.jpg" alt="rollsroyce">
-            <img class="car" id="car3" src="assets/car3.jpg" alt="audir8">
+            <img class="car" id="car1" src="assets/car1.jpg" name="bugatti">
+            <img class="car" id="car2" src="assets/car2.jpg" name="rollsroyce">
+            <img class="car" id="car3" src="assets/car3.jpg" name="audir8">
             <button class="button clear2">Clear</button>
         </div>
+
+        <table class="hidden">
+            <tr>
+                <th>Number</th>
+                <th>Item</th>
+                <th>Answer</th>
+            </tr>
+            <tr id="row1">
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row2">
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row3">
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row4">
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
         <div>
             <button class="button result">Result</button>
         </div>
