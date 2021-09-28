@@ -66,46 +66,65 @@ var clearRadio = function () {
         }
     });
 }
-// User
 
 
 // Holidays
-
-
 clear1.addEventListener('click', clearHolidays, false);
 
 // Girl
-
-
 clear.addEventListener('click', clearRadio, false);
 
 // Cars
 
 var isChosenCar = false;
 
-car1.addEventListener('mouseover', function (event) {
-    event.currentTarget.classList.add('highlitedcar');
-}, false);
+// car1.addEventListener('mouseover', function (event) {
+//     event.currentTarget.classList.add('highlitedcar');
+// }, false);
 
-car2.addEventListener('mouseover', function (event) {
-    event.currentTarget.classList.add('highlitedcar');
-}, false);
+// car2.addEventListener('mouseover', function (event) {
+//     event.currentTarget.classList.add('highlitedcar');
+// }, false);
 
-car3.addEventListener('mouseover', function (event) {
-    event.currentTarget.classList.add('highlitedcar');
-}, false);
+// car3.addEventListener('mouseover', function (event) {
+//     event.currentTarget.classList.add('highlitedcar');
+// }, false);
 
-car1.addEventListener("mouseleave", function (event) {
-    event.currentTarget.classList.remove('highlitedcar');
-}, false);
+// car1.addEventListener("mouseleave", function (event) {
+//     event.currentTarget.classList.remove('highlitedcar');
+// }, false);
 
-car2.addEventListener("mouseleave", function (event) {
-    event.currentTarget.classList.remove('highlitedcar');
-}, false);
+// car2.addEventListener("mouseleave", function (event) {
+//     event.currentTarget.classList.remove('highlitedcar');
+// }, false);
 
-car3.addEventListener("mouseleave", function (event) {
-    event.currentTarget.classList.remove('highlitedcar');
-}, false);
+// car3.addEventListener("mouseleave", function (event) {
+//     event.currentTarget.classList.remove('highlitedcar');
+// }, false);
+
+
+var toggleCar = function( arrayOfCars) {
+
+    var allCars = document.querySelectorAll('.car');
+
+    allCars.forEach(function(car) { 
+        
+        car.addEventListener("mouseleave", function (event) {
+            event.currentTarget.classList.remove('highlitedcar');
+        }, false);
+
+        car.addEventListener("mouseover", function (event) {
+            event.currentTarget.classList.add('highlitedcar');
+        }, false);
+    });
+    
+}
+
+toggleCar();
+
+
+
+// TODO See example above and use this idea to shorten the code below
 
 car1.addEventListener('click', function (event) {
     if (!isChosenCar) {
@@ -131,11 +150,20 @@ car3.addEventListener('click', function (event) {
     storage.car = event.currentTarget.name;
 }, false);
 
+// ------------up to here ------------
+
+
+
+
+
+
 clear2.addEventListener('click', function () {
     var car = document.querySelector('.chosencar');
     car.classList.remove('chosencar');
     isChosenCar = false;
 }, false);
+
+
 
 // Storage
 var show = function () {

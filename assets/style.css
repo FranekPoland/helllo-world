@@ -22,7 +22,6 @@ body {
     margin-right: 120px;
     padding: 50px;
     background: lightgray;
-    opacity: 0.8;
     position: relative;
 }
 
@@ -42,7 +41,7 @@ body {
     font-size: 20px;
 }
 
-.radio-option {
+.option {
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -54,8 +53,19 @@ body {
 
 .car {
     width: 200px;
-    margin: 10px;
+    margin-left: 10px;
     display: inline-block;
+    transition: transform 0.5s;
+    opacity: 0.8;
+    overflow: hidden;
+    border: 3px solid transparent; /* stops jumping imgs */
+}
+
+.car:hover {
+    transform: scale(1.5); /* (150% zoom) */
+    opacity: 1;
+  
+    z-index: 9999;
 }
 
 .highlitedcar {
@@ -64,6 +74,7 @@ body {
 
 .chosencar {
     border: 3px solid black;
+    opacity: 1;
 }
 
 table {
@@ -71,19 +82,20 @@ table {
     border-collapse: collapse;
     width: 100%;
     border: 1px solid black;
-  }
-  
-  td, th {
+}
+
+td,
+th {
     border: 1px solid black;
     text-align: left;
     padding: 8px;
-  }
-  
-  tr:nth-child(even) {
+}
+
+tr:nth-child(even) {
     background-color: #dddddd;
     border: 1px solid black;
-  }
+}
 
-  .hidden {
-      display: none;
-  }
+.hidden {
+    display: none;
+}
