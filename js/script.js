@@ -69,9 +69,11 @@ var clearRadio = function () {
 
 
 // Holidays
+
 clear1.addEventListener('click', clearHolidays, false);
 
 // Girl
+
 clear.addEventListener('click', clearRadio, false);
 
 // Cars
