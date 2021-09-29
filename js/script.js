@@ -103,13 +103,6 @@ var toggleCar = function () {
 toggleCar();
 
 
-// ------------up to here ------------
-
-
-
-
-
-
 clear2.addEventListener('click', function () {
     var car = document.querySelector('.chosencar');
     car.classList.remove('chosencar');
