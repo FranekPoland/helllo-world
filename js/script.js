@@ -5,16 +5,8 @@ var clear2 = document.querySelector('.clear2');
 var radios = document.querySelectorAll('input[type="radio"]');
 var log = document.querySelector('#girl-answer');
 var result = document.querySelector('.result');
-var car1 = document.getElementById('car1');
-var car2 = document.getElementById('car2');
-var car3 = document.getElementById('car3');
-
-var storage = {
-    user: '',
-    woman: '',
-    holidays: [],
-    car: ''
-};
+var buttonerror = document.querySelector('.buttonerror');
+var errors = [];
 
 var getName = function () {
     var nameInput = document.querySelector('.name');
@@ -80,37 +72,14 @@ clear.addEventListener('click', clearRadio, false);
 
 var isChosenCar = false;
 
-// car1.addEventListener('mouseover', function (event) {
-//     event.currentTarget.classList.add('highlitedcar');
-// }, false);
-
-// car2.addEventListener('mouseover', function (event) {
-//     event.currentTarget.classList.add('highlitedcar');
-// }, false);
-
-// car3.addEventListener('mouseover', function (event) {
-//     event.currentTarget.classList.add('highlitedcar');
-// }, false);
-
-// car1.addEventListener("mouseleave", function (event) {
-//     event.currentTarget.classList.remove('highlitedcar');
-// }, false);
-
-// car2.addEventListener("mouseleave", function (event) {
-//     event.currentTarget.classList.remove('highlitedcar');
-// }, false);
-
-// car3.addEventListener("mouseleave", function (event) {
-//     event.currentTarget.classList.remove('highlitedcar');
-// }, false);
 
 
-var toggleCar = function( arrayOfCars) {
+var toggleCar = function () {
 
     var allCars = document.querySelectorAll('.car');
 
-    allCars.forEach(function(car) { 
-        
+    allCars.forEach(function (car) {
+
         car.addEventListener("mouseleave", function (event) {
             event.currentTarget.classList.remove('highlitedcar');
         }, false);
@@ -118,39 +87,21 @@ var toggleCar = function( arrayOfCars) {
         car.addEventListener("mouseover", function (event) {
             event.currentTarget.classList.add('highlitedcar');
         }, false);
+
+        car.addEventListener('click', function (event) {
+            if (!isChosenCar) {
+                event.currentTarget.classList.add('chosencar');
+            }
+            isChosenCar = true;
+            storage.car = event.currentTarget.name;
+        }, false);
+
     });
-    
+
 }
 
 toggleCar();
 
-
-
-// TODO See example above and use this idea to shorten the code below
-
-car1.addEventListener('click', function (event) {
-    if (!isChosenCar) {
-        event.currentTarget.classList.add('chosencar');
-    }
-    isChosenCar = true;
-    storage.car = event.currentTarget.name;
-}, false);
-
-car2.addEventListener('click', function (event) {
-    if (!isChosenCar) {
-        event.currentTarget.classList.add('chosencar');
-    }
-    isChosenCar = true;
-    storage.car = event.currentTarget.name;
-}, false);
-
-car3.addEventListener('click', function (event) {
-    if (!isChosenCar) {
-        event.currentTarget.classList.add('chosencar');
-    }
-    isChosenCar = true;
-    storage.car = event.currentTarget.name;
-}, false);
 
 // ------------up to here ------------
 
@@ -166,16 +117,47 @@ clear2.addEventListener('click', function () {
 }, false);
 
 
+var storage = {
+    user: '',
+    woman: '',
+    holidays: [],
+    car: '',
+
+};
+var isValid = function () {
+    errors = [];
+    for (var key in storage) {
+        if (storage[key] === '') {
+            var msg = key;
+            errors.push(msg);
+
+        }
+        var isEmpty = storage.holidays.length === 0;
+        if (key === 'holidays' && isEmpty) {
+            var msg = 'holidays';
+            errors.push(msg);
+
+        }
+    }
+    if (errors.length) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
 
 // Storage
-var show = function () {
-    var table = document.querySelector('.hidden');
+var showResult = function () {
+    var table = document.querySelector('table');
+    //if (table.classList.contains('hidden'))
     table.classList.remove('hidden');
     var i = 1;
     for (var key in storage) {
-        var tableName = 'row';
-        tableName = tableName + i;
-        var row = document.getElementById(tableName);
+        var rowName = 'row';
+        rowName = rowName + i;
+        var row = document.getElementById(rowName);
         var children = row.children;
         children[0].innerHTML = i;
         children[1].innerHTML = key;
@@ -184,13 +166,37 @@ var show = function () {
     }
 }
 
-var handleResult = function() {
+var showModal = function () {
+    var errorMessage = document.querySelector('#error-message');
+    var errormodal = document.querySelector('.errormodal');
+    errormodal.classList.remove('hidden');
+    window.scrollTo(0, 0);
+    var longError = 'Missing data for ';
+    errors.forEach(function (msg) {
+        longError = longError + msg + ', ';
+    });
+    longError = longError.slice(0, -2);
+    errorMessage.innerHTML = longError;
+}
+
+
+var hideModal = function () {
+    var errormodal = document.querySelector('.errormodal');
+    errormodal.classList.add('hidden');
+}
+
+buttonerror.addEventListener('click', hideModal, false);
+
+var handleResult = function () {
     getHolidays();
     getGirl();
     getName();
+    if (isValid()) {
+        showResult();
+    } else {
+        showModal();
+    }
 
-    show();
 }
 
 result.addEventListener('click', handleResult, false);
-
