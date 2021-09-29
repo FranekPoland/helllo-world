@@ -59,6 +59,7 @@ body {
     transition: transform 0.5s;
     opacity: 0.8;
     overflow: hidden;
+
     border: 3px solid transparent;
     /* stops jumping imgs */
 }
@@ -67,7 +68,6 @@ body {
     transform: scale(1.5);
     /* (150% zoom) */
     opacity: 1;
-
     z-index: 9999;
 }
 
@@ -99,6 +99,7 @@ tr:nth-child(even) {
     background-color: #dddddd;
     border: 1px solid black;
 }
+
 
 .hidden {
     display: none;

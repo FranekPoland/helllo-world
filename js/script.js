@@ -73,6 +73,7 @@ clear.addEventListener('click', clearRadio, false);
 var isChosenCar = false;
 
 
+
 var toggleCar = function () {
 
     var allCars = document.querySelectorAll('.car');
@@ -102,14 +103,22 @@ var toggleCar = function () {
 toggleCar();
 
 
+// ------------up to here ------------
+
+
+
+
+
+
 clear2.addEventListener('click', function () {
     var car = document.querySelector('.chosencar');
     car.classList.remove('chosencar');
     isChosenCar = false;
 }, false);
 
+
 var storage = {
-    user: 'Franek',
+    user: '',
     woman: '',
     holidays: [],
     car: '',
@@ -136,6 +145,7 @@ var isValid = function () {
         return true;
     }
 }
+
 
 
 // Storage
