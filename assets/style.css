@@ -32,6 +32,7 @@ body {
     border: 0.5px solid lightgray;
 }
 
+
 .carsbox,
 .radio-box,
 .checkbox {
@@ -58,13 +59,15 @@ body {
     transition: transform 0.5s;
     opacity: 0.8;
     overflow: hidden;
-    border: 3px solid transparent; /* stops jumping imgs */
+    border: 3px solid transparent;
+    /* stops jumping imgs */
 }
 
 .car:hover {
-    transform: scale(1.5); /* (150% zoom) */
+    transform: scale(1.5);
+    /* (150% zoom) */
     opacity: 1;
-  
+
     z-index: 9999;
 }
 
@@ -101,3 +104,39 @@ tr:nth-child(even) {
     display: none;
 }
 
+.errormodal {
+    font-family: arial, sans-serif;
+    text-align: center;
+    line-height: 100px;
+    position: absolute;
+    width: 500px;
+    background: rgb(255, 253, 253);
+    opacity: 0.9;
+    z-index: 1000;
+    top: 30vh;
+    left: 50vh;
+}
+
+.error p {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+.error-frame {
+    border: 1px solid red;
+}
+
+.buttonerror {
+    text-align: center;
+    /* line-height: 270px; */
+    top: 38vh;
+    /* left: 65vh; */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(35, 206, 26);
+    border-radius: 5px;
+    
+}
