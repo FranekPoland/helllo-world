@@ -8,6 +8,12 @@ var result = document.querySelector('.result');
 var buttonerror = document.querySelector('.buttonerror');
 var errors = [];
 
+var drag = function(ev) {
+    ev.preventDefault();
+    console.log('dragstart');
+}
+
+
 var getName = function () {
     var nameInput = document.querySelector('.name');
     var name = nameInput.value;
