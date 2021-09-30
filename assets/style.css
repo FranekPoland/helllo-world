@@ -6,6 +6,9 @@ body {
     background-image: url('back.jpg');
 }
 
+.container {
+    margin-top: 600px;
+}
 .header1 {
     height: 150px;
     background-color: black;
@@ -140,4 +143,41 @@ tr:nth-child(even) {
     background-color: rgb(35, 206, 26);
     border-radius: 5px;
     
+}
+
+.gamebox {
+    position: absolute;
+    height: 500px;
+    width: 600px;
+    margin-left: 200px;
+    background-image: url('grass.png');
+    cursor: move;
+    cursor: grab;
+}
+
+.field {
+    height: 33vh;
+    width: 80vh;
+}
+
+.ball {
+    height: 45px;
+    width: 45px;
+    cursor: move;
+    cursor: grab;
+}
+
+.balls {
+    position: relative;
+    margin-top: 450px;
+    margin-left: 200px;
+    z-index: 99;
+}
+
+.goal {
+    width: 300px;
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 70px;
+    /* background-image: url('ball.png') !important; */
 }

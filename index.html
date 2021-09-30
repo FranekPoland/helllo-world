@@ -17,7 +17,16 @@
             Menu główne (in progress)
         </nav> -->
         <div>
-
+            <div draggable="true" class="gamebox"> 
+                <div class="goal" id="goal"></div>
+                <div class="balls">
+                    <img class="ball" id="ballone" draggable="true" src="assets/ball.png">
+                    <img class="ball" draggable="true" src="assets/ball.png">
+                    <img class="ball" draggable="true" src="assets/ball.png">
+                    <img class="ball" draggable="true" src="assets/ball.png">
+                    <img class="ball" draggable="true" src="assets/ball.png">
+                </div>
+            </div>
         </div>
         <div class="container">
             <span>Write your name</span>
@@ -25,7 +34,7 @@
         </div>
 
         <div class="checkbox">
-            <p class="comment">Here you can choose where do you like spending your time the most.</p>
+            <p class="comment">Here you can choose where you like spending your time the most.</p>
             <span class="desription">Please select a type of spending time you like the most</span>
             <div class="option">
                 <input type="checkbox" id="forest" name="forest" value="forest">
@@ -103,7 +112,7 @@
 
         <div class="errormodal hidden">
             <p id="error-message"></p>
-                <button class="buttonerror button">Ok</button>
+            <button class="buttonerror button">Ok</button>
         </div>
         <div>
             <button class="button result">Result</button>
