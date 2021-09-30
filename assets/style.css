@@ -148,10 +148,11 @@ tr:nth-child(even) {
 .gamebox {
     position: absolute;
     height: 500px;
-    width: 100vh;
+    width: 600px;
     margin-left: 200px;
     background-image: url('grass.png');
-    z-index: 99;
+    cursor: move;
+    cursor: grab;
 }
 
 .field {
@@ -162,26 +163,21 @@ tr:nth-child(even) {
 .ball {
     height: 45px;
     width: 45px;
-    position: absolute;
-    top: 200px;
+    cursor: move;
+    cursor: grab;
 }
 
 .balls {
-    /* position: relative; */
+    position: relative;
     margin-top: 450px;
     margin-left: 200px;
     z-index: 99;
 }
 
-#goal {
+.goal {
     width: 300px;
     position: absolute;
     margin-top: 100px;
-    margin-left: 150px;
-}
-
-#bob{
-    background-image: url('ball2.jpg');
-    width: 100px;
-    height: 100px;
+    margin-left: 70px;
+    /* background-image: url('ball.png') !important; */
 }
