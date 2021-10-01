@@ -151,7 +151,6 @@ tr:nth-child(even) {
     width: 600px;
     margin-left: 200px;
     background-image: url('grass.png');
-    cursor: move;
     cursor: grab;
 }
 
@@ -161,23 +160,28 @@ tr:nth-child(even) {
 }
 
 .ball {
-    height: 45px;
-    width: 45px;
+    height: 50px;
+    width: 50px;
+    background-color: brown;
     cursor: move;
     cursor: grab;
+    display: inline-block;
+    /* position: absolute; */
 }
 
 .balls {
     position: relative;
     margin-top: 450px;
-    margin-left: 200px;
+    margin-left: 10px;
     z-index: 99;
 }
 
 .goal {
     width: 300px;
+    height: 300px;
     position: absolute;
     margin-top: 100px;
-    margin-left: 70px;
-    /* background-image: url('ball.png') !important; */
+    margin-left: 10px;
+    border: 1px solid black;
+    /* background-image: url('goal.png') !important; */
 }
