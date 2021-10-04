@@ -1,6 +1,6 @@
 import { storage } from "./storage.js";
 import { getName, getHolidays, getGirl } from "./survey.js";
-import { isValid } from "./validation.js";
+import { isValid, showModal } from "./validation.js";
 
 var result = document.querySelector('.result');
 
