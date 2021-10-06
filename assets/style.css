@@ -143,12 +143,3 @@ tr:nth-child(even) {
     border-radius: 5px;
     
 }
-
-.gamebox {
-    position: absolute;
-    height: 500px;
-    width: 600px;
-    margin-left: 200px;
-    background-image: url('grass.png');
-    cursor: grab;
-}
