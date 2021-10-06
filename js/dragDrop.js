@@ -1,54 +1,65 @@
-var elmnt = document.getElementById("ballone");
 var allBalls = document.querySelectorAll('.ball');
+var pos1 = 0,
+  pos2 = 0,
+  pos3 = 0,
+  pos4 = 0;
 
-
-var dragElement = function(ball) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  var elmnt = ball;
-    /* otherwise, move the DIV from anywhere inside the DIV:*/
-    elmnt.onmousedown = dragMouseDown;
-  console.log('start');
-
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-    console.log('dragmouse');
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-    console.log('elementdrag');
-  }
-
-  function closeDragElement() {
-    /* stop moving when mouse button is released:*/
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
+var onDragEnd = function () {
+  pos1 = 0,
+    pos2 = 0,
+    pos3 = 0,
+    pos4 = 0;
 }
 
-allBalls.forEach(function(ball){
-  dragElement(ball);
+var onDragOver = function (e) {
+  var ball = e.target;
+  e.preventDefault();
+  console.log(e);
+  // calculate the new cursor position:
+  pos1 = pos3 - e.clientX;
+  pos2 = pos4 - e.clientY;
+  pos3 = e.clientX;
+  pos4 = e.clientY;
+  // set the element's new position:
+  ball.style.top = (ball.offsetTop / 2 - pos2) + "px";
+  ball.style.left = (ball.offsetLeft / 2 - pos1) + "px";
+  console.log('dragover', pos1, pos2);
+}
+
+
+var onDragStart = function (e) {
+  e.preventDefault();
+  pos3 = e.clientX;
+  pos4 = e.clientY;
+  console.log('onDragStart', pos3, pos4);
+}
+
+var onDrop = function (e) {
+  e.preventDefault();
+  console.log('drop');
+}
+
+var dragLeave = function (e) {
+  e.preventDefault();
+  console.log('dragleave');
+}
+
+allBalls.forEach(function (ball) {
+  ball.addEventListener('dragstart', onDragStart, false); //start
+  ball.addEventListener('dragend', onDragEnd, false); //end
+  document.addEventListener('dragover', onDragOver, false); //move
+  ball.addEventListener('drop', onDrop, false);
+  ball.addEventListener('dragleave', dragLeave, false);
+  ball.addEventListener('drag',  onDragOver, false);
+  //dragElement(ball);
 
 
 })
 
-
+document.addEventListener("dragover", function (event) {
+  // prevent default to allow drop
+  event.preventDefault();
+}, false);
 
 
 // var allBalls = document.querySelectorAll('.ball');
@@ -75,7 +86,7 @@ allBalls.forEach(function(ball){
 // }
 
 // function dragEnd(event) {
-    
+
 //     let shiftX = event.clientX - ball.getBoundingClientRect().left;
 //     let shiftY = event.clientY - ball.getBoundingClientRect().top;
 
@@ -97,7 +108,7 @@ allBalls.forEach(function(ball){
 //     // var ball = e.target;
 //     //     setTranslate(ball,e.clientX, e.clientY);
 //     //console.log('drag', e.pageX,e.clientY, e.clientX);
-    
+
 // }
 
 // function setTranslate(ball, xPos, yPos) {
