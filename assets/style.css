@@ -165,9 +165,19 @@ tr:nth-child(even) {
     background-color: brown;
     cursor: move;
     cursor: grab;
-    display: inline-block;
     /* position: absolute; */
+    display: inline-block;
 }
+
+#ballone {
+    position: absolute;
+}
+
+#balltwo {
+    margin-left: 55px;
+    position: absolute;
+}
+
 
 .balls {
     position: relative;
