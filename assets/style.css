@@ -7,9 +7,10 @@ body {
 }
 
 .container {
-    margin-top: 600px;
+    margin-top: 50px;
 }
 .header1 {
+    margin-top: -45px;
     height: 150px;
     background-color: black;
 }
@@ -133,9 +134,7 @@ tr:nth-child(even) {
 
 .buttonerror {
     text-align: center;
-    /* line-height: 270px; */
     top: 38vh;
-    /* left: 65vh; */
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
@@ -152,46 +151,4 @@ tr:nth-child(even) {
     margin-left: 200px;
     background-image: url('grass.png');
     cursor: grab;
-}
-
-.field {
-    height: 33vh;
-    width: 80vh;
-}
-
-.ball {
-    height: 50px;
-    width: 50px;
-    background-color: brown;
-    cursor: move;
-    cursor: grab;
-    /* position: absolute; */
-    display: inline-block;
-}
-
-#ballone {
-    position: absolute;
-}
-
-#balltwo {
-    margin-left: 55px;
-    position: absolute;
-}
-
-
-.balls {
-    position: relative;
-    margin-top: 450px;
-    margin-left: 10px;
-    z-index: 99;
-}
-
-.goal {
-    width: 300px;
-    height: 300px;
-    position: absolute;
-    margin-top: 100px;
-    margin-left: 10px;
-    border: 1px solid black;
-    /* background-image: url('goal.png') !important; */
 }
